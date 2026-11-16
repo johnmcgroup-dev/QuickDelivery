@@ -148,6 +148,7 @@ CREATE TABLE core.market_locales (
 -- 6. GEOGRAPHICAL OPERATING LOCATIONS
 -- ---------------------------------------------------------
 
+
 CREATE TABLE geography.cities (
     city_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
 
@@ -163,7 +164,7 @@ CREATE TABLE geography.cities (
 
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
 
-    UNIQUE(market_id, city_name, state_region)
+    UNIQUE(market_id, city_name, state_region),
     UNIQUE(city_id, market_id)
 );
 
